@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link href="{% static '/SolasenaWebApp/css/personalizado.css' %}" rel="stylesheet">
+
+<div  class="col-sm-12 col-md-12 col-lg-12 col-xlf-12" id="contactoContenedorPrincipal">
+  <div class="row mx-auto"   >
+    <div class="col-sm-12 col-md-12 col-lg-8 col-xlf-8">
+      <div class="card" id="contactoCard1">
+        <h2 id="contactoTextTitulo"> CONTACTANOS </h2>
+        <h4 id="contactoTextH4">Envianos un mensaje de sugerencia o una solicitud de alguno de nuestros servicios</h4>
+        <div class="card-body" >
+          {% if "valido" in request.GET %}
+            <P style="color: green;">formulario enviado correctamente</P>
+          {% endif %}
+
+          {% if "novalido" in request.GET %}
+          <P style="color: red;">Tu mensaje no ha podido ser enviado</P>
+          {% endif %}
+
+          <form action="/registrarFormularioC/" method="POST"> {% csrf_token %}
+            <div class="form-froup">
+              <div>
+                <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+                <input class="form-control" type="text" name="txtNombre" id="txtNombre" placeholder="Ingresa tu nombre" 
+                minlength="2" maxlength="25" required>
+              </div>
+              <div>
+                <label for="exampleFormControlInput1" class="form-label">Correo electronico</label>
+                <input class="form-control" type="text" name="txtMail" id="txtMail" placeholder="Ingresa tu mail" 
+                minlength="4" maxlength="40" required>
+              </div>
+              <div>
+                <label for="exampleFormControlInput1" class="form-label">Contenido</label>
+                <textarea class="form-control" name="txtContenido" id="exampleFormControlTextarea1" rows="3" placeholder="Ingresa el contenido aqui"
+                minlength="2" maxlength="200" required></textarea>  
+              </div>
+              <button class="btn btn-success btn-block text-white" type="submit" id="contactoBtnEnviar"> Enviar</button>
+
+              <P id="contactoP">Este mensaje lo recivirá el correo admin@solasena.com</P>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+
+
+{% endblock %}

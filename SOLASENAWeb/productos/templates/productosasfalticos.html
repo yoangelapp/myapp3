@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<link href="{% static '/SolasenaWebApp/css/personalizado.css' %}" rel="stylesheet">
+
+<!--primer conetenedor de tarjetas--> 
+<div class="content mb-8 mx-5" >
+  <h2 class="h2 text-center" id="h2_titulo_pruductos"> Productos y apliciones asfalticas</h2>
+  <div class="row" id="row_card" >
+      <div class="col-sm-12 col-md-12 col-lg-4 col-xlf-4 justify-content" style=" padding: 1cm; " >
+        <div class="card mx-auto" style="width: 18rem; background-color: rgba(42, 32, 32, 0.562);">
+          <img src="{% static '/solasenawebapp/img/emulsionasfaltica.webp' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" id="font_white">Emulsiones asfalticas </h5>
+            <p class="card-text" id="font_white">(Rotura Lenta y Raptida) Las <strong>Emulsiones asfálticas</strong> son una mezcla de asfalto con agua que..</p>              
+            <a href="{% url 'EmulsionesAsfalticas' %}" class="btn btn-primary" id="btn_card">Emulsiones Asfalticas</a>
+          </div>
+        </div>            
+      </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xlf-4 my-10" style=" padding: 1cm;">
+          <div class="card mx-auto" style="width: 18rem; background-color: rgba(42, 32, 32, 0.562);">
+            <img src="{% static '/solasenawebapp/img/Cemento_Asfaltico_300x225.jpeg.webp' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" id="font_white">Card title</h5>
+              <p class="card-text" id="font_white">Some quick example text to build on the card title and make.</p>
+              <a href="{% url 'EmulsionesAsfalticas' %}" class="btn btn-primary" id="btn_card">Go somewhere</a>
+            </div>
+          </div>  
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xlf-4 my-10" style=" padding: 1cm;">
+          <div class="card mx-auto" style="width: 18rem; background-color: rgba(42, 32, 32, 0.562);">
+            <img src="{% static '/solasenawebapp/img/Hormigón_asfaltico.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" id="font_white">Card title</h5>
+              <p class="card-text" id="font_white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary" id="btn_card" >Go somewhere</a>
+            </div>
+          </div>  
+        </div>
+  </div>
+</div>
+
+<!--segundo conetenedor de tarjetas-->
+
+<div class="content mb-8 mx-5"  >
+  <div class="row" id="row_card" >
+      <div class=" col-sm-12 col-md-12 col-lg-6 col-xlf-6" style=" padding: 1cm; ">
+        <div class="card mx-auto" style="width: 18rem; background-color: rgba(42, 32, 32, 0.562);" style="background-color: brown;">
+          <img src="{% static '/solasenawebapp/img/transporteycolocaciondeac.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title" id="font_white">Card title</h5>
+            <p class="card-text" id="font_white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>              
+            <a href="#" class="btn btn-primary" id="btn_card">Go somewhere</a>
+          </div>
+        </div>            
+      </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xlf-6 my-10" style="padding: 1cm;">
+          <div class="card offset-3" style="width: 18rem; background-color: rgba(42, 32, 32, 0.562);">
+            <img src="{% static '/solasenawebapp/img/alquilerDeTanquero.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" id="font_white">Card title</h5>
+              <p class="card-text" id="font_white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary" id="btn_card">Go somewhere</a>
+            </div>
+          </div>  
+        </div>
+  </div>
+</div>
+
+<!--
+{% for producto in productos %}
+
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="intro">
+      <a href="{%  url 'EmulsionesAsfalticas' %}"><img class="intro-img img-fluid mb-3 mb-lg-0 rounded" href="" src="{{producto.imagen.url}}" alt="" style="width: 50%;"></a>
+      <div class="intro-text left-0 text-center bg-faded p-5 rounded"  href>
+        <h2 class="section-heading mb-4" >
+          <a href="/SolasenaWebApp" style=" color: rgba(243, 84, 8, 1);"><span class="section-heading-lower" href="{% url 'sobrenosotros'%}">{{ producto.titulo }}</span></a>
+          <span class="section-heading-upper">  {{ producto.contenido }}</span>
+        </h2>
+        <a href="emulsionesasfalticas/" style=" color: rgba(243, 84, 8, 1);"><p class="mb-3">Las Emulsiones asfálticas son una mezcla de asfalto con agua que con el emulsificante 
+        una emulsión...
+        </p></a>
+       
+      </div>
+    </div>
+  </div>
+</section>
+   
+{% endfor %}
+s-->
+  
+
+
+
+{% endblock %}
